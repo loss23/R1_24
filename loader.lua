@@ -32,10 +32,20 @@ if Settings.Key ~= R1KEY then
 	return
 end
 
+local banStatus = loadstring(game:HttpGet('https://raw.githubusercontent.com/loss23/R1_24/main/Functions/VerifyUser.lua'))().CheckUser(game.Players.LocalPlayer.UserId)
+if banStatus == true then
+	for i=0,0,0 do 
+		game.Players.LocalPlayer.Character:MoveTo(Vector3.new(math.huge,math.huge,math.huge))
+	end
+end
 
-local ScriptDB = {
-	["347401822"] = "https://raw.githubusercontent.com/loss23/R1_24/main/Games/347401822.lua"
-}
+-- Functions --
+
+function LoadClientScript(ScriptType)
+	print(ScriptType)
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/loss23/R1_24/main/ClientScripts/'..ScriptType..'.lua'))()
+end
+
 
 local R1 = KavoUI.CreateLib("RateOne | Theme: "..Settings.Theme, Settings.Theme)
 
@@ -43,13 +53,17 @@ local R1 = KavoUI.CreateLib("RateOne | Theme: "..Settings.Theme, Settings.Theme)
 local ClientTab = R1:NewTab("Client Scripts")
 local ClientSection = ClientTab:NewSection("Client Scripts",false)
 
-ClientSection:NewButton("Fling Script","Loads fling script",function()
-	loadstring(game:HttpGet('https://raw.githubusercontent.com/loss23/R1_24/main/ClientScripts/fling.lua'))()
-end)
+ClientSection:NewButton("Fling Script","Loads fling script",LoadClientScript,"fling")
 
 -- R1 Section --
 local R1Tab = R1:NewTab("RateOne")
 local R1SettingsSection = R1Tab:NewSection("Settings",true)
+
+local GameTPSection = R1Tab:NewSection("Game TPs",true)
+
+GameTPSection:NewButton("Teleport To Plaza","Game TP",function()
+	game:GetService("TeleportService"):Teleport(347401822,game.Players.LocalPlayer)
+end)
 
 R1SettingsSection:NewButton("Rejoin","Rejoins Game",function()
 	game:GetService("TeleportService"):Teleport(game.PlaceId,game.Players.LocalPlayer)
@@ -64,6 +78,11 @@ R1SettingsSection:NewButton("JOIN OUR DISCORD!", "Joins the rate one discord!", 
 		Icon = "rbxassetid://10223592622";
 		Duration = 4.5;
 	})
-
 end)
-loadstring(game:HttpGet(ScriptDB[tostring(game.PlaceId)]))()
+
+
+
+
+
+-- Game Script Loader --
+loadstring(game:HttpGet("https://raw.githubusercontent.com/loss23/R1_24/main/Games/".. tostring(game.PlaceId)..".lua"))()
