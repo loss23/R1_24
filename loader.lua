@@ -42,7 +42,6 @@ end
 -- Functions --
 
 function LoadClientScript(ScriptType)
-	print(ScriptType)
 	loadstring(game:HttpGet('https://raw.githubusercontent.com/loss23/R1_24/main/ClientScripts/'..ScriptType..'.lua'))()
 end
 
@@ -54,6 +53,31 @@ local ClientTab = R1:NewTab("Client Scripts")
 local ClientSection = ClientTab:NewSection("Client Scripts",false)
 
 ClientSection:NewButton("Fling Script","Loads fling script",LoadClientScript,"fling")
+ClientSection:NewSlider("WalkSpeed","Default 16-20 probably",100,1,function(c)
+	local char = game.Players.LocalPlayer.Character
+	char.Humanoid.WalkSpeed = c
+end)
+local CurPlayerList = game.Players:GetPlayers()
+ClientSection:NewDropdown("Teleport To","PlayerList",CurPlayerList,function(Selected)
+	game.Players.LocalPlayer.Character:MoveTo(Selected.Character.PrimaryPart.Position)
+	CurPlayerList = game.Players:GetPlayers()
+end)
+ClientSection:NewColorPicker("ChatColor","Client sided, works with new ChatService",Color3.new(0.333333, 0.666667, 1),function(col)
+	local cs = game:GetService("TextChatService")
+	cs.ChatWindowConfiguration.TextColor3 = col
+	cs.BubbleChatConfiguration.TextColor3 = col
+end)
+ClientSection:NewButton("Mute All Sounds","*can't undo",function()
+	LoadClientScript("MuteAllSounds")
+end)
+ClientSection:NewTextBox("Set Mouse Icon","Set Icon to specific image",function(id)
+	local Icon = "rbxassetid://"..id
+	game.Players.LocalPlayer:GetMouse().Icon = Icon
+end)
+ClientSection:NewButton("Get All Tools","These tools are client sided. If coded bad, it'll work.",function()
+	LoadClientScript("GetAllTools")
+end)
+
 
 -- R1 Section --
 local R1Tab = R1:NewTab("RateOne")
@@ -61,12 +85,13 @@ local R1SettingsSection = R1Tab:NewSection("Settings",true)
 
 local GameTPSection = R1Tab:NewSection("Game TPs",true)
 
-GameTPSection:NewButton("Teleport To Plaza","Game TP",function()
-	game:GetService("TeleportService"):Teleport(347401822,game.Players.LocalPlayer)
-end)
-
 R1SettingsSection:NewButton("Rejoin","Rejoins Game",function()
 	game:GetService("TeleportService"):Teleport(game.PlaceId,game.Players.LocalPlayer)
+end)
+
+--
+GameTPSection:NewButton("Teleport To Plaza","Game TP",function()
+	game:GetService("TeleportService"):Teleport(347401822,game.Players.LocalPlayer)
 end)
 
 R1SettingsSection:NewLabel("Credits: thefrx0x & loser5808")
