@@ -32,6 +32,9 @@ if Settings.Key ~= R1KEY then
 	return
 end
 
+function LoadClientScript(ScriptName)
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/loss23/R1_24/main/ClientScripts/'..ScriptName..'.lua'))()
+end
 
 local ScriptDB = {
 	["347401822"] = "https://raw.githubusercontent.com/loss23/R1_24/main/Games/347401822.lua"
@@ -44,7 +47,13 @@ local ClientTab = R1:NewTab("Client Scripts")
 local ClientSection = ClientTab:NewSection("Client Scripts",false)
 
 ClientSection:NewButton("Fling Script","Loads fling script",function()
-	loadstring(game:HttpGet('https://raw.githubusercontent.com/loss23/R1_24/main/ClientScripts/fling.lua'))()
+	LoadClientScript("fling")
+end)
+ClientSection:NewButton("Mute All Sounds","Can't be undone",function()
+	LoadClientScript("MuteAllSounds")
+end)
+ClientSection:NewButton("Get All Tools","Client sided",function()
+	LoadClientScript("GetAllTools")
 end)
 
 -- R1 Section --
