@@ -33,7 +33,7 @@ if Settings.Key ~= R1KEY then
 end
 
 local GameId = game.GameId
-local newLoadLink = loadstring(game:HttpGet('https://raw.githubusercontent.com/loss23/R1_24/main/Games/'..GameId..'.lua'))() or nil
+local newLoadLink = loadstring(game:HttpGet('https://raw.githubusercontent.com/loss23/R1_24/main/Games/'..tostring(GameId)..'.lua'))() or nil
 
 if not newLoadLink then
 	local R1 = KavoUI.CreateLib("RateOne | Theme: "..Settings.Theme, Settings.Theme)
