@@ -31,12 +31,15 @@ Condos:NewButton("Claim all condos", "", function()
 end)
 
 Condos:NewTextBox("Kick Condo Ownership", "", function(Number)
-	game:GetService("ReplicatedStorage").AptStats.Remotes.KickRequest:FireServer(Number);
+	game:GetService("ReplicatedStorage").AptStats.Remotes.KickRequest:FireServer(Number)
 end)
 -- Condos --
 
 -- Casino --
-
+Casino:NewButton("Inf Money","Big",function()
+    local amount = 690e8
+	game.ReplicatedStorage.ServerStats.ChangeMoney:FireServer(amount, math.floor(math.sqrt(game.ReplicatedStorage.ServerStats.CurrentID.Value)) + 1337)
+end)
 -- Casino --
 
 -- Teleports --
