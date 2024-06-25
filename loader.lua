@@ -32,39 +32,42 @@ if Settings.Key ~= R1KEY then
 	return
 end
 
-local GameId = game.GameId
-local newLoadLink = loadstring(game:HttpGet('https://raw.githubusercontent.com/loss23/R1_24/main/Games/'..tostring(GameId)..'.lua'))() or nil
 
-if not newLoadLink then
-	local R1 = KavoUI.CreateLib("RateOne | Theme: "..Settings.Theme, Settings.Theme)
+local ScriptDB = {
+	["347401822"] = "https://raw.githubusercontent.com/loss23/R1_24/main/Games/347401822.lua"
+}
 
-	-- Client Scripts Section --
-	local ClientTab = R1:NewTab("Client Scripts")
-	local ClientSection = ClientTab:NewSection("Client Scripts",false)
+if not table.find(ScriptDB,game.PlaceId) then
+local R1 = KavoUI.CreateLib("RateOne | Theme: "..Settings.Theme, Settings.Theme)
 
-	ClientSection:NewButton("Fling Script","Loads fling script",function()
-		loadstring(game:HttpGet('https://raw.githubusercontent.com/loss23/R1_24/main/ClientScripts/fling.lua'))()
-	end)
+-- Client Scripts Section --
+local ClientTab = R1:NewTab("Client Scripts")
+local ClientSection = ClientTab:NewSection("Client Scripts",false)
 
-	-- R1 Section --
-	local R1Tab = R1:NewTab("RateOne")
-	local R1SettingsSection = R1Tab:NewSection("Settings",true)
+ClientSection:NewButton("Fling Script","Loads fling script",function()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/loss23/R1_24/main/ClientScripts/fling.lua'))()
+end)
 
-	R1SettingsSection:NewButton("Rejoin","Rejoins Game",function()
-		game:GetService("TeleportService"):Teleport(game.PlaceId,game.Players.LocalPlayer)
-	end)
+-- R1 Section --
+local R1Tab = R1:NewTab("RateOne")
+local R1SettingsSection = R1Tab:NewSection("Settings",true)
 
-	R1SettingsSection:NewLabel("Credits: thefrx0x & loser5808")
-	R1SettingsSection:NewButton("JOIN OUR DISCORD!", "Joins the rate one discord!", function()
-		setclipboard("https://discord.gg/tyKb9KXm")
-		game.StarterGui:SetCore("SendNotification",  {
-			Title = "▀▄『R』『1』▄▀";
-			Text = "Invite copied";
-			Icon = "rbxassetid://10223592622";
-			Duration = 4.5;
-		})
+R1SettingsSection:NewButton("Rejoin","Rejoins Game",function()
+	game:GetService("TeleportService"):Teleport(game.PlaceId,game.Players.LocalPlayer)
+end)
 
-	end)
+R1SettingsSection:NewLabel("Credits: thefrx0x & loser5808")
+R1SettingsSection:NewButton("JOIN OUR DISCORD!", "Joins the rate one discord!", function()
+	setclipboard("https://discord.gg/tyKb9KXm")
+	game.StarterGui:SetCore("SendNotification",  {
+		Title = "▀▄『R』『1』▄▀";
+		Text = "Invite copied";
+		Icon = "rbxassetid://10223592622";
+		Duration = 4.5;
+	})
+
+end)
+
 else
-	
+	loadstring(game:HttpGet(ScriptDB[game.PlaceId]))()
 end
