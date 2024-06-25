@@ -23,47 +23,22 @@ local Casino = PlazaTab:NewSection("Casino")
 local Teleports = PlazaTab:NewSection("Teleports")
 
 -- Condos --
-R1:NewButton("Claim all condos", "", function()
+Condos:NewButton("Claim all condos", "", function()
 	local RoomTable = {"102","103","104","201","203","204","301","302","303","304","401","402","403","404","501","502","503","504","601","602","603","604","701","702","703","704"}
 	for i,v in RoomTable do
 		game:GetService("ReplicatedStorage").AptStats.Remotes.GetRoom:FireServer(v)
 	end
 end)
 
-R1:NewTextBox("Kick Condo Ownership", "", function(Number)
-	game:GetService("ReplicatedStorage").AptStats.Remotes.KickRequest:FireServer(Number);
+Condos:NewTextBox("Kick Condo Ownership", "", function(Number)
+	game:GetService("ReplicatedStorage").AptStats.Remotes.KickRequest:FireServer(Number)
 end)
 -- Condos --
 
 -- Casino --
-Casino:NewToggle("Raise Jackpot", "Money!", function(s)
-	while s == true do
-		task.wait(.01)
-		game:GetService("ReplicatedStorage").ServerStats.Jackpots.ChangeJackpots:FireServer("1", 0)
-		game:GetService("ReplicatedStorage").ServerStats.Jackpots.ChangeJackpots:FireServer("2", 0)
-		game:GetService("ReplicatedStorage").ServerStats.Jackpots.ChangeJackpots:FireServer("3", 0)
-		game:GetService("ReplicatedStorage").ServerStats.Jackpots.ChangeJackpots:FireServer("4", 0)
-		game:GetService("ReplicatedStorage").ServerStats.Jackpots.ChangeJackpots:FireServer("5", 0)
-		game:GetService("ReplicatedStorage").ServerStats.Jackpots.ChangeJackpots:FireServer("6", 0)
-		game:GetService("ReplicatedStorage").ServerStats.Jackpots.ChangeJackpots:FireServer("7", 0)
-		game:GetService("ReplicatedStorage").ServerStats.Jackpots.ChangeJackpots:FireServer("8", 0)
-
-	end
-end)
-
-Casino:NewToggle("Lower Jackpot", "No money :(", function(s)
-	while s== true do
-		wait()
-		game:GetService("ReplicatedStorage").ServerStats.Jackpots.ChangeJackpots:FireServer("1", -1)
-		game:GetService("ReplicatedStorage").ServerStats.Jackpots.ChangeJackpots:FireServer("2", -1)
-		game:GetService("ReplicatedStorage").ServerStats.Jackpots.ChangeJackpots:FireServer("3", -1)
-		game:GetService("ReplicatedStorage").ServerStats.Jackpots.ChangeJackpots:FireServer("4", -1)
-		game:GetService("ReplicatedStorage").ServerStats.Jackpots.ChangeJackpots:FireServer("5", -1)
-		game:GetService("ReplicatedStorage").ServerStats.Jackpots.ChangeJackpots:FireServer("6", -1)
-		game:GetService("ReplicatedStorage").ServerStats.Jackpots.ChangeJackpots:FireServer("7", -1)
-		game:GetService("ReplicatedStorage").ServerStats.Jackpots.ChangeJackpots:FireServer("8", -1)
-
-	end
+Casino:NewButton("Inf Money","Big",function()
+    local amount = 690e8
+	game.ReplicatedStorage.ServerStats.ChangeMoney:FireServer(amount, math.floor(math.sqrt(game.ReplicatedStorage.ServerStats.CurrentID.Value)) + 1337)
 end)
 -- Casino --
 
