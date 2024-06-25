@@ -23,14 +23,14 @@ local Casino = PlazaTab:NewSection("Casino")
 local Teleports = PlazaTab:NewSection("Teleports")
 
 -- Condos --
-R1:NewButton("Claim all condos", "", function()
+Condos:NewButton("Claim all condos", "", function()
 	local RoomTable = {"102","103","104","201","203","204","301","302","303","304","401","402","403","404","501","502","503","504","601","602","603","604","701","702","703","704"}
 	for i,v in RoomTable do
 		game:GetService("ReplicatedStorage").AptStats.Remotes.GetRoom:FireServer(v)
 	end
 end)
 
-R1:NewTextBox("Kick Condo Ownership", "", function(Number)
+Condos:NewTextBox("Kick Condo Ownership", "", function(Number)
 	game:GetService("ReplicatedStorage").AptStats.Remotes.KickRequest:FireServer(Number);
 end)
 -- Condos --
