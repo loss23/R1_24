@@ -1,9 +1,4 @@
-local KavoUI
-if game:GetService("RunService"):IsStudio() then
-	KavoUI = require(game.ReplicatedStorage.KAVO)
-else
-	KavoUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/loss23/R1_24/main/lib"))()
-end
+local KavoUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/loss23/R1_24/main/lib.lua"))()
 
 --          _____                    _____                _____                    _____                           _______                   _____                    _____          
 --         /\    \                  /\    \              /\    \                  /\    \                         /::\    \                 /\    \                  /\    \         
@@ -39,12 +34,8 @@ print(Settings)
 
 -- Key System--
 local R1_Key
-if game:GetService("RunService"):IsStudio() then
-	R1_Key = Settings.Key
-else
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/loss23/R1_24/main/Functions/GetKey.lua"))()
-	R1_Key = _G.R1KEY
-end
+loadstring(game:HttpGet("https://raw.githubusercontent.com/loss23/R1_24/main/Functions/GetKey.lua"))()
+R1_Key = _G.R1KEY
 
 if Settings.Key ~= R1_Key then
 	return
