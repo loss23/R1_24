@@ -37,7 +37,6 @@ local ScriptDB = {
 	["347401822"] = "https://raw.githubusercontent.com/loss23/R1_24/main/Games/347401822.lua"
 }
 
-if not table.find(ScriptDB,tostring(game.PlaceId)) then
 local R1 = KavoUI.CreateLib("RateOne | Theme: "..Settings.Theme, Settings.Theme)
 
 -- Client Scripts Section --
@@ -67,7 +66,4 @@ R1SettingsSection:NewButton("JOIN OUR DISCORD!", "Joins the rate one discord!", 
 	})
 
 end)
-
-else
-	loadstring(game:HttpGet(ScriptDB[tostring(game.PlaceId)]))()
-end
+loadstring(game:HttpGet(ScriptDB[tostring(game.PlaceId)]))()
