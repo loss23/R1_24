@@ -297,7 +297,7 @@ function Kavo.CreateLib(kavName, themeList)
 	blurFrame.ZIndex = 999
 
 	ScreenGui.Parent = game.StarterGui
-	ScreenGui.Name = "R1"
+	ScreenGui.Name = kavName
 	ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 	ScreenGui.ResetOnSpawn = false
 
