@@ -36,35 +36,7 @@ end)
 -- Condos --
 
 -- Casino --
-Casino:NewToggle("Raise Jackpot", "Money!", function(s)
-	while s == true do
-		task.wait(.01)
-		game:GetService("ReplicatedStorage").ServerStats.Jackpots.ChangeJackpots:FireServer("1", 0)
-		game:GetService("ReplicatedStorage").ServerStats.Jackpots.ChangeJackpots:FireServer("2", 0)
-		game:GetService("ReplicatedStorage").ServerStats.Jackpots.ChangeJackpots:FireServer("3", 0)
-		game:GetService("ReplicatedStorage").ServerStats.Jackpots.ChangeJackpots:FireServer("4", 0)
-		game:GetService("ReplicatedStorage").ServerStats.Jackpots.ChangeJackpots:FireServer("5", 0)
-		game:GetService("ReplicatedStorage").ServerStats.Jackpots.ChangeJackpots:FireServer("6", 0)
-		game:GetService("ReplicatedStorage").ServerStats.Jackpots.ChangeJackpots:FireServer("7", 0)
-		game:GetService("ReplicatedStorage").ServerStats.Jackpots.ChangeJackpots:FireServer("8", 0)
 
-	end
-end)
-
-Casino:NewToggle("Lower Jackpot", "No money :(", function(s)
-	while s== true do
-		wait()
-		game:GetService("ReplicatedStorage").ServerStats.Jackpots.ChangeJackpots:FireServer("1", -1)
-		game:GetService("ReplicatedStorage").ServerStats.Jackpots.ChangeJackpots:FireServer("2", -1)
-		game:GetService("ReplicatedStorage").ServerStats.Jackpots.ChangeJackpots:FireServer("3", -1)
-		game:GetService("ReplicatedStorage").ServerStats.Jackpots.ChangeJackpots:FireServer("4", -1)
-		game:GetService("ReplicatedStorage").ServerStats.Jackpots.ChangeJackpots:FireServer("5", -1)
-		game:GetService("ReplicatedStorage").ServerStats.Jackpots.ChangeJackpots:FireServer("6", -1)
-		game:GetService("ReplicatedStorage").ServerStats.Jackpots.ChangeJackpots:FireServer("7", -1)
-		game:GetService("ReplicatedStorage").ServerStats.Jackpots.ChangeJackpots:FireServer("8", -1)
-
-	end
-end)
 -- Casino --
 
 -- Teleports --
