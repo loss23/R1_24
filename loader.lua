@@ -75,4 +75,7 @@ R1SettingsSection:NewButton("JOIN OUR DISCORD!", "Joins the rate one discord!", 
 	})
 
 end)
-loadstring(game:HttpGet(ScriptDB[tostring(game.PlaceId)]))()
+
+if table.find(ScriptDB,tostring(game.PlaceId) then
+	loadstring(game:HttpGet(ScriptDB[tostring(game.PlaceId)]))()
+end
