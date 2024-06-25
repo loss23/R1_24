@@ -73,8 +73,8 @@ R1SettingsSection:NewButton("JOIN OUR DISCORD!", "Joins the rate one discord!", 
 		Icon = "rbxassetid://10223592622";
 		Duration = 4.5;
 	})
-end))
+end)
 
-if table.find(ScriptDB,tostring(game.PlaceId) then
+if table.find(ScriptDB,tostring(game.PlaceId)) then
 	loadstring(game:HttpGet(ScriptDB[tostring(game.PlaceId)]))()
 end
