@@ -1,5 +1,23 @@
+local ClientSettings = {
+    ['Key'] = _G.Key or "",
+    ["Theme"] = _G.Theme or "BloodTheme"
+}
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/loss23/R1_24/main/Functions/GetKey.lua'))()
+R1KEY = _G.R1KEY
+
+if ClientSettings.Key ~= R1Key then
+    game.StarterGui:SetCore("SendNotification",  {
+		Title = "▀▄『R』『1』▄▀";
+		Text = "Invalid Key.";
+		Icon = "rbxassetid://10223592622";
+		Duration = 4.5;
+	})
+    return
+end
+
 local KavoUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local R1 = KavoUI.CreateLib("RateOne", "BloodTheme")
+local R1 = KavoUI.CreateLib("RateOne", ClientSettings.Theme)
 
 local R1Tab = R1:NewTab("RateOne")
 local R1SettingsSection = R1Tab:NewSection("Settings",true)
