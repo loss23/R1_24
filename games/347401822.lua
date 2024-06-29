@@ -71,19 +71,6 @@ Teleports:NewButton("Oans Electronics","Shock my nipples..please",function()
 end)
 -- Teleports --
 
-function LoadClientScript(ScriptName)
-	loadstring(game:HttpGet('https://raw.githubusercontent.com/loss23/R1_24/main/ClientScripts/'..ScriptName..'.lua'))()
-end
-
--- Client Scripts Section --
-local ClientTab = R1:NewTab("Client Scripts")
-local ClientSection = ClientTab:NewSection("Client Scripts",false)
-
-ClientSection:NewButton("Fling Script","Loads fling script",function()
-	LoadClientScript("fling")
-end)
-
-
 -- R1 Section --
 local R1Tab = R1:NewTab("RateOne")
 local R1SettingsSection = R1Tab:NewSection("Settings",true)
