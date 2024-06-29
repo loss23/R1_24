@@ -1,5 +1,5 @@
 local KavoUI:any = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local R1:any = KavoUI.CreateLib("RateOne", "BloodTheme")
+local R1:any = KavoUI.CreateLib("RateOne", _G.Theme)
  
 -- Plaza Script Section --
 local PlazaTab = R1:NewTab("Plaza Scripts")
@@ -24,6 +24,23 @@ end)
 Casino:NewButton("Inf Money","Big",function()
     local amount = 690e8
 	game.ReplicatedStorage.ServerStats.ChangeMoney:FireServer(amount, math.floor(math.sqrt(game.ReplicatedStorage.ServerStats.CurrentID.Value)) + 1337)
+end)
+
+local Rise = false
+Casino:NewToggle("Raise Jackpot","Sex",function(e)
+    Rise = e
+
+    while Rise == true do
+        wait()
+        game:GetService("ReplicatedStorage").ServerStats.Jackpots.ChangeJackpots:FireServer("1", 0)
+        game:GetService("ReplicatedStorage").ServerStats.Jackpots.ChangeJackpots:FireServer("2", 0)
+        game:GetService("ReplicatedStorage").ServerStats.Jackpots.ChangeJackpots:FireServer("3", 0)
+        game:GetService("ReplicatedStorage").ServerStats.Jackpots.ChangeJackpots:FireServer("4", 0)
+        game:GetService("ReplicatedStorage").ServerStats.Jackpots.ChangeJackpots:FireServer("5", 0)
+        game:GetService("ReplicatedStorage").ServerStats.Jackpots.ChangeJackpots:FireServer("6", 0)
+        game:GetService("ReplicatedStorage").ServerStats.Jackpots.ChangeJackpots:FireServer("7", 0)
+        game:GetService("ReplicatedStorage").ServerStats.Jackpots.ChangeJackpots:FireServer("8", 0)
+    end
 end)
 -- Casino --
 
