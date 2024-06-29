@@ -46,4 +46,4 @@ R1SettingsSection:NewButton("JOIN OUR DISCORD!", "Joins the rate one discord!", 
 end)
 
 --Load Game Script Hub
-loadstring(game:HttpGet('https://raw.githubusercontent.com/loss23/R1_24/main/games/'..game.PlaceId..'.lua'))()\
+loadstring(game:HttpGet('https://raw.githubusercontent.com/loss23/R1_24/main/games/'..game.PlaceId..'.lua'))()
