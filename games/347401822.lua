@@ -1,19 +1,5 @@
-local KavoUI
-
-if game:GetService("RunService"):IsStudio() then
-	KavoUI = require(game.ReplicatedStorage.KAVO)
-else
-	KavoUI = loadstring(game:HttpGet('https://raw.githubusercontent.com/loss23/R1_24/main/lib.lua'))()
-end
-
-if KavoUI == nil then KavoUI = loadstring(game:HttpGet('https://raw.githubusercontent.com/loss23/R1_24/main/lib.lua'))() end
-
-local Settings = {
-	["Theme"] = _G.Theme or "BloodTheme",
-	["Key"] = _G.Key or ""
-}
-
-local R1 = KavoUI.CreateLib("RateOne | Theme: "..Settings.Theme, Settings.Theme)
+local KavoUI:any = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local R1:any = KavoUI.CreateLib("RateOne", "BloodTheme")
 
 -- Plaza Script Section --
 local PlazaTab = R1:NewTab("Plaza Scripts")
@@ -22,7 +8,6 @@ local Condos = PlazaTab:NewSection("Condos")
 local Casino = PlazaTab:NewSection("Casino")
 local Teleports = PlazaTab:NewSection("Teleports")
 
--- Condos --
 Condos:NewButton("Claim all condos", "", function()
 	local RoomTable = {"102","103","104","201","203","204","301","302","303","304","401","402","403","404","501","502","503","504","601","602","603","604","701","702","703","704"}
 	for i,v in RoomTable do
@@ -86,13 +71,24 @@ Teleports:NewButton("Oans Electronics","Shock my nipples..please",function()
 end)
 -- Teleports --
 
+function LoadClientScript(ScriptName)
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/loss23/R1_24/main/ClientScripts/'..ScriptName..'.lua'))()
+end
+
 -- Client Scripts Section --
 local ClientTab = R1:NewTab("Client Scripts")
 local ClientSection = ClientTab:NewSection("Client Scripts",false)
 
 ClientSection:NewButton("Fling Script","Loads fling script",function()
-	loadstring(game:HttpGet('https://raw.githubusercontent.com/loss23/R1_24/main/ClientScripts/fling.lua'))()
+	LoadClientScript("fling")
 end)
+ClientSection:NewButton("Mute All Sounds","Can't be undone",function()
+	LoadClientScript("MuteAllSounds")
+end)
+ClientSection:NewButton("Get All Tools","Client sided",function()
+	LoadClientScript("GetAllTools")
+end)
+
 
 -- R1 Section --
 local R1Tab = R1:NewTab("RateOne")
