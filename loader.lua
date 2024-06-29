@@ -3,10 +3,10 @@ local ClientSettings = {
     ["Theme"] = _G.Theme or "BloodTheme"
 }
 
-loadstring(game:HttpGet('https://raw.githubusercontent.com/loss23/R1_24/main/Functions/GetKey.lua'))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/loss23/R1_24/main/Functions/key.lua'))()
 R1KEY = _G.R1KEY
 
-if ClientSettings.Key ~= R1Key then
+if tostring(ClientSettings.Key) ~= tostring(R1KEY) then 
     game.StarterGui:SetCore("SendNotification",  {
 		Title = "▀▄『R』『1』▄▀";
 		Text = "Invalid Key.";
@@ -52,4 +52,4 @@ R1SettingsSection:NewButton("JOIN OUR DISCORD!", "Joins the rate one discord!", 
 end)
 
 --Load Game Script Hub
-loadstring(game:HttpGet('https://raw.githubusercontent.com/loss23/R1_24/wave_update/games/'..game.PlaceId..'.lua'))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/loss23/R1_24/main/games'..game.PlaceId..'.lua'))()
