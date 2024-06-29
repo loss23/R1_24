@@ -82,12 +82,6 @@ local ClientSection = ClientTab:NewSection("Client Scripts",false)
 ClientSection:NewButton("Fling Script","Loads fling script",function()
 	LoadClientScript("fling")
 end)
-ClientSection:NewButton("Mute All Sounds","Can't be undone",function()
-	LoadClientScript("MuteAllSounds")
-end)
-ClientSection:NewButton("Get All Tools","Client sided",function()
-	LoadClientScript("GetAllTools")
-end)
 
 
 -- R1 Section --
