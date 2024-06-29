@@ -1,5 +1,5 @@
 local KavoUI:any = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local R1:any = KavoUI.CreateLib("RateOne", _G.Theme)
+local R1:any = KavoUI.CreateLib("RateOne", "BloodTheme")
  
 -- Plaza Script Section --
 local PlazaTab = R1:NewTab("Plaza Scripts")
