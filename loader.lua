@@ -7,7 +7,7 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/loss23/R1_24/main/Fun
 R1KEY = _G.R1KEY
 DevKey = _G.DevKey
 
-if tostring(ClientSettings.Key) ~= tostring(R1KEY) or tostring(ClientSettings.Key) ~= tostring(DevKey) then 
+if tostring(ClientSettings.Key) ~= tostring(R1KEY) and tostring(ClientSettings.Key) ~= tostring(DevKey) then 
     game.StarterGui:SetCore("SendNotification",  {
 		Title = "▀▄『R』『1』▄▀";
 		Text = "Invalid Key.";
@@ -53,6 +53,7 @@ else
 		Icon = "rbxassetid://10223592622";
 		Duration = 4.5;
 	})
+    local R1Tab = R1:NewTab("RateOne")
 	local R1SettingsSection = R1Tab:NewSection("Settings",true)
 	R1SettingsSection:NewButton("Inf Yield","All ur gonna need",function()
 		loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
