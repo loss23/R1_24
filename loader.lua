@@ -7,7 +7,7 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/loss23/R1_24/main/Fun
 R1KEY = _G.R1KEY
 DevKey = _G.DevKey
 
-if tostring(ClientSettings.Key) ~= tostring(R1KEY) then 
+if tostring(ClientSettings.Key) ~= tostring(R1KEY) or tostring(ClientSettings.Key) ~= tostring(DevKey) then 
     game.StarterGui:SetCore("SendNotification",  {
 		Title = "▀▄『R』『1』▄▀";
 		Text = "Invalid Key.";
