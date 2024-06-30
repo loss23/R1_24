@@ -1,6 +1,6 @@
 local KavoUI:any = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local R1:any = KavoUI.CreateLib("RateOne", _G.Theme)
- 
+
 -- Stands Awake --
 local StandsTab = R1:NewTab("Stands Game")
 
