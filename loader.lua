@@ -46,7 +46,13 @@ if tostring(ClientSettings.Key) ~= tostring(DevKey) then
 			Duration = 4.5;
 		})
 	end)
-else
+else	
+	game.StarterGui:SetCore("SendNotification",  {
+		Title = "▀▄『R』『1』▄▀";
+		Text = "Dev Mode Loaded.";
+		Icon = "rbxassetid://10223592622";
+		Duration = 4.5;
+	})
 	local R1SettingsSection = R1Tab:NewSection("Settings",true)
 	R1SettingsSection:NewButton("Inf Yield","All ur gonna need",function()
 		loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
