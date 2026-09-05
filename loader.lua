@@ -51,11 +51,9 @@ else
 		Icon = "rbxassetid://10223592622";
 		Duration = 4.5;
 	})
-    local R1Tab = R1:NewTab("RateOne")
-	local R1SettingsSection = R1Tab:NewSection("Settings",true)
-	R1SettingsSection:NewButton("Inf Yield","All ur gonna need",function()
-		loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
-	end)
+    local R1Tab = R1:NewTab("DEV")
+	local R1SettingsSection = R1Tab:NewSection("DEV",true)
+	
 end
 
 -- Client Scripts Section --
@@ -68,6 +66,10 @@ end
 
 	ClientSection:NewButton("RemoteSpy", "Sneaky", function()
 		LoadClientScript("Remote Spy")
+	end)
+
+	ClientSection:NewButton("Inf Yield","All ur gonna need",function()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 	end)
 
 
