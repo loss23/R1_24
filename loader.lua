@@ -36,7 +36,7 @@ if tostring(ClientSettings.Key) ~= tostring(DevKey) then
 		LoadClientScript("fling")
 	end)
 
-	ClientSection:NewButton("Remote Spy", "Sneaky", function()
+	ClientSection:NewButton("RemoteSpy", "Sneaky", function()
 		LoadClientScript("Remote Spy")
 	end)
 	
