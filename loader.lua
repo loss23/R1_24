@@ -24,6 +24,8 @@ end
 local KavoUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local R1 = KavoUI.CreateLib("RateOne", ClientSettings.Theme)
 
+_G.R1_GUI = R1
+
 if tostring(ClientSettings.Key) ~= tostring(DevKey) then 
 	local R1Tab = R1:NewTab("RateOne")
 	local R1SettingsSection = R1Tab:NewSection("Settings",true)
@@ -51,8 +53,6 @@ else
 		loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 	end)
 end
---Load Game Script Hub
-loadstring(game:HttpGet('https://raw.githubusercontent.com/loss23/R1_24/main/games/'..game.PlaceId..'.lua'))()
 
 -- Client Scripts Section --
 	local ClientTab = R1:NewTab("Client Scripts")
@@ -65,4 +65,7 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/loss23/R1_24/main/gam
 	ClientSection:NewButton("RemoteSpy", "Sneaky", function()
 		LoadClientScript("Remote Spy")
 	end)
-	
+
+
+--Load Game Script Hub
+loadstring(game:HttpGet('https://raw.githubusercontent.com/loss23/R1_24/main/games/'..game.PlaceId..'.lua'))()
