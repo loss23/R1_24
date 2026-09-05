@@ -3,6 +3,8 @@ local ClientSettings = {
     ["Theme"] = _G.Theme or "BloodTheme"
 }
 
+local curVersion = "1.5"
+
 loadstring(game:HttpGet('https://raw.githubusercontent.com/loss23/R1_24/main/Functions/key.lua'))()
 R1KEY = _G.R1KEY
 DevKey = _G.DevKey
@@ -22,7 +24,7 @@ if tostring(ClientSettings.Key) ~= tostring(R1KEY) and tostring(ClientSettings.K
 end
 
 local KavoUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local R1 = KavoUI.CreateLib("RateOne", ClientSettings.Theme)
+local R1 = KavoUI.CreateLib("RateOne | "..curVersion, ClientSettings.Theme)
 
 _G.R1_GUI = R1
 
