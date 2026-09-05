@@ -3,7 +3,7 @@ local ClientSettings = {
     ["Theme"] = _G.Theme or "BloodTheme"
 }
 
-local curVersion = "1.5"
+local curVersion = "Version 1.5"
 
 loadstring(game:HttpGet('https://raw.githubusercontent.com/loss23/R1_24/main/Functions/key.lua'))()
 R1KEY = _G.R1KEY

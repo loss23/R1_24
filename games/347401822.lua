@@ -2,7 +2,7 @@ local KavoUI:any = loadstring(game:HttpGet("https://raw.githubusercontent.com/xH
 local R1:any = _G.R1_GUI
  
 -- Plaza Script Section --
-local PlazaTab = R1:NewTab("Plaza Scripts")
+local PlazaTab = R1:NewTab("The Plaza")
 
 local Condos = PlazaTab:NewSection("Condos")
 local Casino = PlazaTab:NewSection("Casino")

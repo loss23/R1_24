@@ -2,7 +2,7 @@ local KavoUI:any = loadstring(game:HttpGet("https://raw.githubusercontent.com/xH
 local R1:any = _G.R1_GUI
 
 -- Stands Awake --
-local StandsTab = R1:NewTab("Stands Game")
+local StandsTab = R1:NewTab("Stands Awakening")
 
 local Combat:any = StandsTab:NewSection("Combat")
 local Items:any = StandsTab:NewSection("Items")
