@@ -7,6 +7,10 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/loss23/R1_24/main/Fun
 R1KEY = _G.R1KEY
 DevKey = _G.DevKey
 
+function LoadClientScript(ScriptName)
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/loss23/R1_24/main/ClientScripts/'..ScriptName..'.lua'))()
+end
+
 if tostring(ClientSettings.Key) ~= tostring(R1KEY) and tostring(ClientSettings.Key) ~= tostring(DevKey) then 
     game.StarterGui:SetCore("SendNotification",  {
 		Title = "▀▄『R』『1』▄▀";
@@ -23,22 +27,6 @@ local R1 = KavoUI.CreateLib("RateOne", ClientSettings.Theme)
 if tostring(ClientSettings.Key) ~= tostring(DevKey) then 
 	local R1Tab = R1:NewTab("RateOne")
 	local R1SettingsSection = R1Tab:NewSection("Settings",true)
-	
-	function LoadClientScript(ScriptName)
-		loadstring(game:HttpGet('https://raw.githubusercontent.com/loss23/R1_24/main/ClientScripts/'..ScriptName..'.lua'))()
-	end
-	
-	-- Client Scripts Section --
-	local ClientTab = R1:NewTab("Client Scripts")
-	local ClientSection = ClientTab:NewSection("Client Scripts",false)
-	
-	ClientSection:NewButton("Fling Script","Loads fling script",function()
-		LoadClientScript("fling")
-	end)
-
-	ClientSection:NewButton("RemoteSpy", "Sneaky", function()
-		LoadClientScript("Remote Spy")
-	end)
 	
 	R1SettingsSection:NewLabel("Credits: thefrx0x & loser5808")
 	R1SettingsSection:NewButton("JOIN OUR DISCORD!", "Joins the rate one discord!", function()
@@ -65,3 +53,16 @@ else
 end
 --Load Game Script Hub
 loadstring(game:HttpGet('https://raw.githubusercontent.com/loss23/R1_24/main/games/'..game.PlaceId..'.lua'))()
+
+-- Client Scripts Section --
+	local ClientTab = R1:NewTab("Client Scripts")
+	local ClientSection = ClientTab:NewSection("Client Scripts",false)
+	
+	ClientSection:NewButton("Fling Script","Loads fling script",function()
+		LoadClientScript("fling")
+	end)
+
+	ClientSection:NewButton("RemoteSpy", "Sneaky", function()
+		LoadClientScript("Remote Spy")
+	end)
+	
