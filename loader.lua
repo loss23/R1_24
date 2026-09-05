@@ -35,6 +35,10 @@ if tostring(ClientSettings.Key) ~= tostring(DevKey) then
 	ClientSection:NewButton("Fling Script","Loads fling script",function()
 		LoadClientScript("fling")
 	end)
+
+	ClientSection:NewButton("Remote Spy", "Sneaky", function()
+		LoadClientScript("Remote Spy")
+	end)
 	
 	R1SettingsSection:NewLabel("Credits: thefrx0x & loser5808")
 	R1SettingsSection:NewButton("JOIN OUR DISCORD!", "Joins the rate one discord!", function()
